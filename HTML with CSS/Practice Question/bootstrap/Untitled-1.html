@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include<stdio.h>
+        #include<conio.h>
+        #include<math.h>
+        float f(float x)
+        {
+        return(x*x*x-4*x-9);
+        }
+        void bisect(float *x,float a,float b ,int *itr)
+        {
+        *x=(a+b)/2;
+        ++(*itr);
+        printf("iteration no. %3d x = %7.5f\n",*itr,*x);
+        }
+        main()
+        {
+        int itr=0,maxitr;
+        float x,a,b,aerr,x1;
+        clrscr();
+        printf("enter the value of a,b,allowed error,maximum iteration \n");
+        scanf("%f%f%f%d",&a,&b,&aerr,&maxitr);
+        bisect(&x,a,b,&itr);
+        do
+        {
+        if(f(a)*f(x)<0)
+        b=x;
+        else a=x;
+        bisect(&x1,a,b,&itr);
+        if (fabs(x1-x)<aerr)
+        {
+        printf("after %d iteration ,root =%6.4f\n",itr,x1);
+        getch();
+        return 0;
+        }
+        x=x1;
+        }
+        While (itr<maxtir);
+        Printf(“solution does not coverage,” “iteration not sufficient”);
+        return1;
+        }
+        
+</body>
+</html>

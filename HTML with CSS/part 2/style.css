@@ -1,0 +1,115 @@
+*{
+    font-family:'Times New Roman', Times, serif;
+    font-size:25px;
+}
+
+h1 {
+    color:#b92b27;
+}
+
+p {
+    color:green;
+}
+#myid {
+    color:coral;
+}
+
+#login {
+    background-color:aliceblue;
+    color:cadetblue;
+}
+#signup {
+    background-color: aliceblue;
+    color:cadetblue
+}
+
+.follow {
+    font-family: 'Courier New';
+}
+
+.upvote {
+    background-color: #b92b27;
+    color:aliceblue;
+}
+
+.answer {
+    background-color: aqua;
+    color:blueviolet;
+}
+
+.post a {
+    color:purple;
+    background-color: rgb(194, 234, 112);
+}
+
+nav ul li {
+    color:green;
+}
+
+p + h3 {
+    text-decoration : underline;
+    color:chocolate !important;
+}
+
+.upvote + button {
+    background-color: cornflowerblue;
+    color :aliceblue
+}
+
+div > input{
+    background-color:#759ae3;
+    color :aqua;
+}
+
+input[type="text"] {
+    color : rgb(8, 227, 111);
+}
+
+input[type="password"]{
+    color:red;
+}
+
+p[id="myid"] a {
+    color:darkblue;
+}
+
+button:hover {
+    background-color: blue;
+    color:white;
+}
+
+button:active {
+    background-color: darkgoldenrod;
+}
+
+p:active {
+    font-weight:bolder;
+    color:green;
+}
+
+input[type="radio"]:checked + label{
+    color:green;
+    font-weight: bold;
+}
+
+div:nth-of-type(2) {
+    background-color:lightblue;
+}
+
+h1::first-letter{
+    color:green;
+}
+
+p::first-line {
+    color: red;
+    background-color:antiquewhite ;
+}
+
+p::selection {
+    background-color: rgb(237, 237, 115);
+}
+
+#div {
+    color:green;
+    background-color: rgb(152, 230, 243);
+}

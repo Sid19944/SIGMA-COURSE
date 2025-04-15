@@ -1,0 +1,442 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.bank_logo {
+    height: 40px;
+    width: 100px;
+    padding: 3px 0 0 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: brown;
+    color: white;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 70px;
+    cursor: pointer;
+}
+.bank_logo:hover {
+    box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.8);
+}
+.personal_button {
+    position: absolute;
+    left: 17%;
+    top: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 0 0 5px 10px;
+}
+.material-symbols-outlined {
+    color: brown;
+}
+.personal_slide_bar .personal_menu {
+    position: absolute;
+    left: -1000px;
+    height: 50vh;
+    width: 260px;
+    box-shadow: 0 0 8px rgba(244, 66, 66, 0.7);
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    z-index: 2;
+}
+.personal_slide_bar .personal_menu a {
+    display: block;
+    height: 38px;
+    padding: 10px 0 0 10px;
+    border-bottom: 1px solid rgba(220, 101, 101, 0.8);
+    border-radius: 20px;
+}
+.personal_button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.8);
+    .personal_slide_bar .personal_menu{
+        left: 0;
+    }
+}
+.personal_slide_bar .personal_menu a:hover {
+    border-radius: 10px;
+    color: darkred;
+    font-weight: bold;
+    background-color: rgba(220, 101, 101, 0.8);
+}
+
+
+.about_us_button {
+    position: absolute;
+    padding: 0 0 5px 10px;
+    border-radius: 20px;
+    left: 60%;
+    top: 10px;
+    cursor: pointer;
+}
+.about_us_slide_bar .about_menu {
+    position: absolute;
+    top: -1000px;
+    
+    height: 45vh;
+    width: 260px;
+    box-shadow: 0 0 8px rgba(244, 66, 66, 0.7);
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    z-index: 2;
+}
+.about_us_slide_bar .about_menu a {
+    display: block;
+    height: 38px;
+    padding: 10px 0 0 10px;
+    border-bottom: 1px solid rgba(220, 101, 101, 0.8);
+    border-radius: 20px;
+}
+.about_us_button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.8);
+    .about_us_slide_bar .about_menu {
+        top: 30px;
+    }
+}
+.about_us_slide_bar .about_menu a:hover {
+    border-radius: 10px;
+    font-weight: bold;
+    color: darkred;
+    background-color: rgba(220, 101, 101, 0.8);;   
+}
+
+
+.investors_button {
+    position: absolute;
+    left: 70%;
+    top: 10px;
+    border-radius: 20px;
+    padding: 0 0 5px 10px;
+    cursor: pointer;
+}
+.investors_slide_bar .investors_menu {
+    position: absolute;
+    left: -10000px;
+    height: 52vh;
+    width: 260px;
+    box-shadow: 0 0 8px rgba(244, 66, 66, 0.7);
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    z-index: 2;
+}
+.investors_slide_bar .investors_menu a {
+    display: block;
+    height: 38px;
+    padding: 10px 0 0 10px;
+    border-bottom: 1px solid rgba(220, 101, 101, 0.8);
+    border-radius: 20px;
+}
+.investors_button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.8);
+    .investors_slide_bar .investors_menu {
+        left: 0;
+    }
+}
+.investors_slide_bar .investors_menu  a:hover {
+    border-radius: 10px;
+    color: darkred;
+    font-weight: bold;
+    background-color: rgba(220, 101, 101, 0.8);
+}
+
+.careers_button {
+    position: absolute;
+    left: 80%;
+    top: 10px;
+    border-radius: 20px;
+    padding: 0 0 5px 10px;
+    cursor: pointer;
+}
+.careers_slide_bar .careers_menu {
+    position: absolute;
+    left: -10000px;
+    height: 12vh;
+    width: 260px;
+    box-shadow: 0 0 8px rgba(244, 66, 66, 0.7);
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    z-index: 2;
+}
+.careers_slide_bar .careers_menu a {
+    display: block;
+    height: 38px;
+    padding: 10px 0 0 10px;
+    border-bottom: 1px solid rgba(220, 101, 101, 0.8);
+    border-radius: 20px;
+}
+.careers_button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.8);
+    .careers_slide_bar .careers_menu {
+        left:-200%
+    }
+}
+.careers_slide_bar .careers_menu a:hover {
+    border-radius: 10px;
+    color: darkred;
+    font-weight: bold;
+    background-color: rgba(220, 101, 101, 0.8);
+}
+.ESG_button {
+    position: absolute;
+    left: 90%;
+    top: 10px;
+    border-radius: 20px;
+    padding: 0 0 5px 10px;
+    cursor: pointer;
+}
+.ESG_slide_bar .ESG_menu {
+    position: absolute;
+    left: -10000px;
+    height: 12vh;
+    width: 260px;
+    box-shadow: 0 0 8px rgba(244, 66, 66, 0.7);
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    z-index: 2;
+}
+.ESG_slide_bar .ESG_menu a {
+    display: block;
+    height: 38px;
+    padding: 10px 0 0 10px;
+    border-bottom: 1px solid rgba(220, 101, 101, 0.8);
+    border-radius: 20px;
+}
+.ESG_button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.8);
+    .ESG_slide_bar .ESG_menu {
+        left: -200%;
+    }
+}
+.ESG_slide_bar .ESG_menu a:hover {
+    border-radius: 10px;
+    color: darkred;
+    font-weight: bold;
+    background-color: rgba(220, 101, 101, 0.8);
+}
+#header_search_section {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    height: 39px;
+    width: 100%;
+    padding: 8px 0;
+}
+#header_search_section #search_button {
+    width: 35%;
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 9px 10px 9px 50px;
+    border: 2px solid;
+}
+.fa-magnifying-glass {
+    position: absolute;
+    left: 23px;
+    top: 20px;
+    font-size: 18px;
+}
+.dropdown_box {
+    margin: 0 0 0 20px;
+    display: inline-block;
+    position: absolute;
+    width: 13%;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 7px 16px;
+    cursor: pointer;
+}
+.dropdown_box:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.8);
+}
+.Customer_Service_button {
+    display: inline-block;
+    position: absolute;
+    left: 60%;
+    width: 10%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 7px 16px;
+    cursor: pointer;
+}
+.Customer_Service_slide_bar {
+    position: absolute;
+    top: 35px;
+    left: -10000px;
+    height: 17vh;
+    width: 355px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 0 8px rgba(244, 66, 66, 0.7);
+    padding: 10px 10px 0 10px;
+}
+.Customer_Service_slide_bar a {
+    display: block;
+    height: 45px;
+    border-bottom: 1px solid rgba(220, 101, 101, 0.8);
+    padding: 10px 10px 0 60px;
+    border-radius: 20px;
+}
+.Customer_Service_slide_bar a p {
+    font-size: small;
+}
+.fa-user-tie {
+    position: absolute;
+    top: 15%;
+    left: 7%;
+    font-size: 25px;
+}
+.Customer_Service_slide_bar a{
+    color: brown;
+}
+.Customer_Service_slide_bar #text {
+    color: black;
+}
+.Customer_Service_slide_bar .fa-headphones-simple {
+    position: absolute;
+    top: 55%;
+    left: 6%;
+    font-size: 30px;
+}
+.Customer_Service_button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.8);
+    .Customer_Service_slide_bar {
+        left: -100%;
+    }
+}
+.Customer_Service_slide_bar a:hover{
+    background-color: rgba(141, 143, 138, 0.2);
+    box-shadow: 2px 2px 6px rgba(141, 143, 138, 0.7);
+}
+.login_button {
+    display: inline-block;
+    position: absolute;
+    left: 76%;
+    width: 10%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 7px 16px;
+    cursor: pointer;
+}
+.login_button .login_slide_bar {
+    position: absolute;
+    top: 35px;
+    left: -1000%;
+    height: 50vh;
+    width: 260px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 0 8px rgba(244, 66, 66, 0.7);
+    padding: 20px;
+}
+.login_button .login_slide_bar .login_account {
+    box-shadow: 0 0 8px rgba(244, 66, 66, 0.7);
+    border-radius: 20px;
+    padding: 10px;
+}
+.login_button .login_slide_bar .login_account #are_you_ready{
+    color: #9d1d27;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+}
+.login_button .login_slide_bar .login_account #are_you_ready #text {
+    font-size:16px;
+    font-weight: 400;
+    color: black;
+    padding: 10px 0;
+}
+.login_slide_bar .login_account .login_to_internet_banking_button {
+    position: relative;
+    top: 5%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #9d1d27;
+}
+.login_to_internet_banking_button #login_to_internet_banking {
+    font-size: 18px;
+    color: white;
+    position: relative;
+    top: 18%;
+    left: 8%;
+    padding: 10px 0 0 10px;
+}
+.login_to_internet_banking_button .fa-arrow-right-to-bracket {
+    color: white;
+    position: relative;
+    top: 18%;
+    left: 7%;
+}
+.login_slide_bar .loan_wholesale_accounts{
+    position: relative;
+    top: 10%;
+    height: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 8px rgba(244, 66, 66, 0.7);
+}
+.login_slide_bar .loan_wholesale_accounts .loan_account {
+    height: 60px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(220, 101, 101, 0.3);
+    border-radius: 20px;
+}
+.login_slide_bar .loan_wholesale_accounts .loan_account .fa-chevron-right {
+    position: relative;
+    left: 45%;
+    font-size: 23px;
+    color: #9d1d27;
+}
+.login_slide_bar .loan_wholesale_accounts .loan_account #acc_name {
+    color: rgb(99, 106, 114);
+}
+.loan_account #pay_loan_emi {
+    font-size: 17px;
+    color: #9d1d27;
+    font-weight: 700;
+}
+.login_slide_bar .loan_wholesale_accounts .wholesale_account {
+    height: 60px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.login_slide_bar .loan_wholesale_accounts .wholesale_account #acc_name {
+    color: rgb(99, 106, 114);
+}
+.wholesale_account #login {
+    font-size: 17px;
+    color: #9d1d27;
+    font-weight: 700;
+}
+.login_slide_bar .loan_wholesale_accounts .wholesale_account .fa-chevron-right {
+    position: relative;
+    left: 50%;
+    font-size: 23px;
+    color: #9d1d27;
+}
+.login_button:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    box-shadow: 3px 3px 8px rgba(128, 128, 128, 0.8);
+    .login_slide_bar {
+        left: -150px;
+    }
+}
+.login_slide_bar div:hover {
+    background-color: rgba(141, 143, 138, 0.2);
+    box-shadow: 2px 2px 6px rgba(141, 143, 138, 0.7);
+}

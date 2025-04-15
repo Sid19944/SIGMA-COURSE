@@ -1,0 +1,63 @@
+h1 {
+    background-color: yellow;
+    color: blueviolet;
+}
+.box {
+    height: 100px;
+    width: 300px;
+    background-color: pink;
+    /* animation-name: widthAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+
+    animation: WCAnimation 4s ease-in-out 0s infinite alternate;
+}
+
+@keyframes WCAnimation {
+    0% {
+        width: 10px;
+        background-color: red;
+        border-radius: 0px;
+        
+    }
+    50% {
+        background-color: greenyellow;
+    }
+    100% {
+        width: 300px;
+        background-color: orange;
+        border-radius: 30px;
+    }
+}
+
+@media (width: 400px) {
+    h1 {
+        background-color: burlywood;
+        color: aliceblue;
+    }
+}
+
+@media (min-width: 600px){
+    h1 {
+        background-color: greenyellow;
+    }
+}
+@media (max-width: 300px){
+    h1 {
+        background-color: lightsteelblue;
+    }
+}
+@media (min-width:500px)and (max-width: 600px){
+    h1{
+        background-color: aquamarine;
+    }
+}
+
+@media (orientation : landscape) {
+    h1 {
+        background-color: lightslategray;
+    }
+}
