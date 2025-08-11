@@ -157,17 +157,17 @@
 // })
 
 // //              USING : ( input event )
-// user.addEventListener("input",function(){
-//     console.log("input event");
-//     console.log("final value : ",this.value);
-// })
+user.addEventListener("input",function(){
+    console.log("input event");
+    console.log("final value : ",this.value);
+})
 
 //              FORM Activity
-let text = document.querySelector("#text");
-let p = document.querySelector("p");
+// let text = document.querySelector("#text");
+// let p = document.querySelector("p");
 
-text.addEventListener("input",function(){
-    console.log("final value",this.value);
-    p.innerText = this.value;
-});
+// text.addEventListener("input",function(){
+//     console.log("final value",this.value);
+//     p.innerText = this.value;
+// });
 

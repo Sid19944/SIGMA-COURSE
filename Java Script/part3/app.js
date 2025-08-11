@@ -112,7 +112,7 @@
 
 // Q. Return the index of the "javascript" form the fiven array, if it was reversed.
 // let lang = ["c","c++","html","javascript","python","java","c#","sql"];
-// console.log(lang.reverse().indexOf("javascript"));   
+// console.log(lang.reverse().indexOf("javascript")); //first reverse the lang than find the indexOf javascript.  
 // console.log(lang.indexOf("javascript"));     //my
 
 

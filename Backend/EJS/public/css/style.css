@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(216, 109, 216);
+}
+img {
+    width: 250px;
+    height: 250px;
+}
+button {
+    background: linear-gradient(45deg, purple, blue);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+button:hover {
+    box-shadow: 5px 5px 20px rgb(255, 255, 255);
+}
+div {
+    background-color: rgb(91, 244, 244);
+    border-radius: 10px;
+    padding: 10px;
+}

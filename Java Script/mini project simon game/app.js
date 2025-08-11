@@ -61,6 +61,7 @@ function checkAns(idx) {
         }
     } else {
         h3.innerHTML = `Game Over! Your <b>score<b> was ${level-1}<br> Press any key to start!`;
+        maxScore(level);
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function(){
             document.querySelector("body").style.backgroundColor = "white";
@@ -94,4 +95,14 @@ function gameOver(){
     h3.innerHTML = `Congrulation you score the max score ${level-1}<br>
     Press any key to restert the game`;
     reset();
+}
+
+let max = [0];
+function maxScore(level){
+    let h4 = document.querySelector("h4");
+    if(max[0]<level){
+        h4.innerHTML = `Highest Score ${level-1}`;
+        max.pop();
+        max.push(level-1);
+    }
 }

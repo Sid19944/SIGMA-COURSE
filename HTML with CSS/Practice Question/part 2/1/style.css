@@ -2,6 +2,7 @@ body {
     font-family: Georgia;
 }
 p {
+    text-align: center;
     color : #ab12ab;
     line-height: 30px;
 }
