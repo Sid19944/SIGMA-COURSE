@@ -1,0 +1,41 @@
+body { 
+    margin-left: 20px;
+}
+
+#chats_page {
+    margin: 10px;
+    background-color : aliceblue;
+    padding: 0 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+.msg {
+    background-color: dodgerblue;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+#chats_page #buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#newForm {
+    display: flex;
+    width: 400px;
+    margin: auto;
+    border: 1px solid black;
+    flex-direction: column;
+    padding: 10px;
+}
+#edit_form {
+    width: 35%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: 3px 4px 7px black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new user</title>
+    <style>
+        form {
+            display: flex;
+            justify-content: center;
+        }
+        form div {
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+        }
+        h3 {
+            text-align: center;
+        }
+        input {
+            margin: 5px 0;
+        }
+        textarea {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="/user" method="post">
+        <div>
+            <h3>Enter Your Details</h3>
+            <textarea name="id" id="id"><%= id %></textarea>
+            <label for="username">Enter username</label>
+            <input type="text" name="username" id="username">
+            <label for="email">Enter Your Email ID</label>
+            <input type="text" name="email" id="email">
+            <label for="password">Enter Password</label>
+            <input type="password" name="password" id="password">
+            <button>Submit</button>
+        </div>
+        
+    </form>
+</body>
+</html>

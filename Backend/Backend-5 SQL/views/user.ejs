@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <table border="black">
+        <thead>
+            <tr>
+                <th>SR no.</th>
+                <th>Id</th>
+                <th>User Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i=1; i<=data.length; i++){ %>
+                <tr>
+                    <td id="SR_no"><%= i %></td>
+                    <td id="id"><%= data[i-1].id %></td>
+                    <td id="username"><%= data[i-1].username %> </td>
+                    <td id="email"><%= data[i-1].email %></td>
+                    <td>
+                        <form action="/user/<%= data[i-1].id %>/edit" method="get">
+                            <button>Edit username</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/user/<%= data[i-1].id%>?_method=DELETE" method="post">
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>        
+    </table>
+    <form action="/user/add" method="get">
+        <button>Add new user</button>
+    </form>
+</body>
+</html>
+

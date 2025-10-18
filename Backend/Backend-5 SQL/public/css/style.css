@@ -1,0 +1,12 @@
+#username {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    margin: 10px 0;
+}
