@@ -96,7 +96,6 @@ nav {
   height: 40vh;
 }
 
-
 .btns {
   display: flex;
 }
@@ -105,4 +104,14 @@ nav {
   background-color: yellowgreen;
   text-align: center;
   border-radius: 20px;
+}
+
+.show-card-img {
+  width: 40%;
+}
+
+/* MAP */
+#map {
+  height: 300px;
+  width: 80vh;
 }

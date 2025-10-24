@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review.js");
+const { required } = require("joi");
+// const { required } = require("joi");
 
 const listingSchema = new Schema({
   title: {
@@ -11,13 +13,8 @@ const listingSchema = new Schema({
     type: String,
   },
   image: {
-    type: String,
-    default:
-      "https://images.unsplash.com/photo-1755303238751-d04f190c96dd?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    set: (v) =>
-      v === ""
-        ? "https://images.unsplash.com/photo-1755303238751-d04f190c96dd?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        : v,
+    url: String,
+    filename: String,
   },
   price: {
     type: Number,
@@ -35,6 +32,16 @@ const listingSchema = new Schema({
       ref: "Review",
     },
   ],
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  category: {
+    type: String,
+    enum: ["Mountain", "Mountain City", "City", "Beach"],
+    required: true,
+  },
 });
 
 listingSchema.post("findOneAndDelete", async (list) => {
@@ -44,7 +51,5 @@ listingSchema.post("findOneAndDelete", async (list) => {
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
-
-
 
 module.exports = Listing;

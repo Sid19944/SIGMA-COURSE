@@ -9,6 +9,7 @@
         id="new_form"
         novalidate
         class="needs-validation"
+        enctype="multipart/form-data"
       >
         <div class="mb-3">
           <label for="title" class="form-lebel">Title</label>
@@ -37,15 +38,32 @@
           <div class="valid-feedback">looks good</div>
           <div class="invalid-feedback">Enter Valid Description</div>
         </div>
+
         <div class="mb-3">
           <label for="image" class="form-lebel">Image URL</label>
           <input
-            type="text"
+            type="file"
             id="image"
             name="image"
-            placeholder="Enter Image URL"
             class="form-control"
+            required
           />
+          <div class="valid-feedback">looks good</div>
+          <div class="invalid-feedback">Enter Valid file</div>
+        </div>
+        <div class="mb-3">
+          <label for="category" class="form-lebel">Enter Category</label>
+          <select
+            class="form-select-sm"
+            name="category"
+            aria-label="Default select example"
+          >
+            <option selected>Select</option>
+            <option value="Mountain">Mountain</option>
+            <option value="Mountain City">Mountain City</option>
+            <option value="City">City</option>
+            <option value="Beach">Beach</option>
+          </select>
         </div>
         <div class="row">
           <div class="mb-3 col-md-4">

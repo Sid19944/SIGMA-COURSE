@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -5,6 +9,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -15,6 +20,7 @@ const ExpressError = require("./utils/ExpressError.js");
 const listRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const categoryRoute = require("./routes/category.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -23,10 +29,42 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
+// const MONGO_URL = "mongodb://127.0.0.1:27017/wonderlust";
+const dbUrl = process.env.ATLASDB_URL;
+main()
+  .then((res) => {
+    console.log("connected to DB");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+async function main() {
+  // await mongoose.connect(MONGO_URL);
+  await mongoose.connect(dbUrl);
+}
+
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: "secretCode",
+  },
+  touchAfter: 24 * 60 * 60,
+});
+
+store.on("error", () => {
+  console.log("ERROR in MONGO SESSION STORE");
+});
+
 const sessionOption = {
+  store,
   secret: "secretCode",
   resave: false,
   saveUninitialized: true,
+  cookie: {
+    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    httpOnly: true,
+  },
 };
 
 app.use(session(sessionOption));
@@ -40,33 +78,12 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/demoUser", async (req, res) => {
-  const fakeUser = new User({
-    email: "sid@gmail.com",
-    username: "Sid",
-  });
-
-  let registeredUser = await User.register(fakeUser, "123@sid");
-  res.send(registeredUser);
-});
-
 app.use((req, res, next) => {
   res.locals.successMsg = req.flash("success");
   res.locals.error = req.flash("error");
+  res.locals.currUser = req.user;
   next();
 });
-
-const MONGO_URL = "mongodb://127.0.0.1:27017/wonderlust";
-main()
-  .then((res) => {
-    console.log("connected to DB");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-async function main() {
-  await mongoose.connect(MONGO_URL);
-}
 
 // using the listing routes
 app.use("/listings", listRouter);
@@ -74,6 +91,8 @@ app.use("/listings", listRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 // using the user routes
 app.use("/", userRouter);
+
+app.use("/listings/category", categoryRoute);
 
 // Wild Card Error handler
 app.all("/*splat", (req, res, next) => {

@@ -1,26 +1,29 @@
 <% layout("/layouts/boilerplate") %>
-<body>
 
+<body>
   <div class="row mb-4 mt-3">
     <div class="col-6 offset-3">
       <h3>List Details</h3>
     </div>
     <div class="card lisitng-card col-6 offset-3">
       <img
-        src="<%= list.image %>"
+        src="<%= list.image.url %>"
         class="card-img-top show-img"
         alt="List_image"
       />
       <div class="card-body">
         <h5 class="card-title"><%= list.title %></h5>
+        <p class="card-text"><i>Owned by <%= list.owner.username %></i></p>
+        <p class="card-text"><%= list.description %></p>
         <p class="card-text">
-          <%= list.description %><br />
-          &#8377; <%= list.price.toLocaleString("en-In") %><br /><!-- &#8377 for rupees symbol, toLocaleString("en-IN") for comma for indian rupees synx -->
-          <%= list.location %><br />
-          <%= list.country %><br />
+          &#8377; <%= list.price.toLocaleString("en-In") %><!-- &#8377 for rupees symbol, toLocaleString("en-IN") for comma for indian rupees synx -->
         </p>
+
+        <p class="card-text"><%= list.location %></p>
+        <p class="card-text"><%= list.country %></p>
       </div>
     </div>
+    <% if(currUser && currUser._id.equals(list.owner._id )) { %>
     <div class="btns">
       <a
         href="/listings/<%=list._id%>/edit"
@@ -31,9 +34,11 @@
         <button class="btn btn-dark offset-4">Delete</button>
       </form>
     </div>
+    <% } %>
   </div>
 
   <div class="col-8 offset-3 mb-3 mt-3">
+    <% if(currUser) { %>
     <hr />
     <h4>Leave a Review</h4>
     <form
@@ -44,15 +49,27 @@
     >
       <div class="mb-3">
         <label for="rating" class="form-label">Rating</label>
-        <input
-          type="range"
-          min="1"
-          max="5"
-          id="rating"
-          vlaue="5"
-          name="rating"
-        />
-        <output for="rating" id="rangeValue" aria-hidden="true"></output>
+        <fieldset class="starability-slot">
+          <input
+            type="radio"
+            id="no-rate"
+            class="input-no-rate"
+            name="rating"
+            value="1"
+            checked
+            aria-label="No rating."
+          />
+          <input type="radio" id="first-rate1" name="rating" value="1" />
+          <label for="first-rate1" title="Terrible">1 star</label>
+          <input type="radio" id="first-rate2" name="rating" value="2" />
+          <label for="first-rate2" title="Not good">2 stars</label>
+          <input type="radio" id="first-rate3" name="rating" value="3" />
+          <label for="first-rate3" title="Average">3 stars</label>
+          <input type="radio" id="first-rate4" name="rating" value="4" />
+          <label for="first-rate4" title="Very good">4 stars</label>
+          <input type="radio" id="first-rate5" name="rating" value="5" />
+          <label for="first-rate5" title="Amazing">5 stars</label>
+        </fieldset>
       </div>
       <div class="mb-3">
         <label for="comment" class="form-label">Comment</label>
@@ -70,22 +87,42 @@
       </div>
       <button class="btn btn-primary">Submit</button>
     </form>
+    <% } %>
     <hr />
-    <p><b>All Reviews</b></p>
 
+    <%if(list.reviews.length>0) {%>
     <div class="row">
+      <p><b>All Reviews</b></p>
       <% for(review of list.reviews) {%>
       <div class="card col-5 ms-3 mb-3">
         <div class="card-body">
-          <h5 class="card-title">Username</h5>
+          <h5 class="card-title">@<%= review.owner.username %></h5>
+          <p
+            class="starability-result card-text"
+            data-rating="<%= review.rating %>"
+          ></p>
           <p class="card-text"><%= review.comment %></p>
-          <p class="card-text"><%= review.rating %> stars</p>
         </div>
-        <form action="/listings/<%=list._id%>/reviews/<%= review._id%>?_method=DELETE" method="POST" class="mb-3">
+        <% if(review.owner.equals(currUser && currUser._id)) { %>
+        <form
+          action="/listings/<%=list._id%>/reviews/<%= review._id%>?_method=DELETE"
+          method="POST"
+          class="mb-3"
+        >
           <button class="btn btn-sm btn-dark">Delete</button>
         </form>
+        <% } %>
       </div>
       <% } %>
     </div>
+    <% }%>
   </div>
+
+  <!-- For MAP -->
+  <!-- <div class="col-8 offset-3 mb-3 mt-3">
+    <h3>Where you'll be</h3>
+    <div id="map"></div>
+  </div> -->
 </body>
+
+<!-- <script src="/js/map.js"></script> -->
