@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.box {
+  @apply bg-gray-300 m-4 border-2 rounded-lg;
+}
