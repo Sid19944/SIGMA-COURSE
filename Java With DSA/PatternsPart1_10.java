@@ -177,20 +177,18 @@ public class PatternsPart1_10 {
         // }
 
 
-        //Palindromic pattern with number pattern
-        for(int i=1; i <=n; i++){
-            for(int j=1; j<=(n+i)-1; j++){
-                if(j>(n-i)){
-                    System.out.print(Math.abs(n-j)+1);
-                }
-                else{
-                    System.out.print(" ");
-                }
-            }
-            System.out.println();
-        }
-
-        // System.out.print(Math.abs(-1)+1);
+        // //Palindromic pattern with number pattern
+        // for(int i=1; i <=n; i++){
+        //     for(int j=1; j<=(n+i)-1; j++){
+        //         if(j>(n-i)){
+        //             System.out.print(Math.abs(n-j)+1);
+        //         }
+        //         else{
+        //             System.out.print(" ");
+        //         }
+        //     }
+        //     System.out.println();
+        // }
 
     }
 }
